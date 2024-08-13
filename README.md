@@ -29,13 +29,13 @@ pip install -r requirements.txt
 ## Usage
 
 Medicare Part D spending:
-Input company ticker of interest to call up Medicare Part D spending
+Input company ticker of interest to call up Medicare Part D spending.
 
 ```sh
 python -m data.medicare
 ```
 Company revenue:
-Input company ticker, year(s), and year to retrieve total revenue from Yahoo Finance
+Input company ticker, year(s), and year to retrieve total revenue from Yahoo Finance.
 
 ```sh
 python -m data.revenue
