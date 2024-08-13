@@ -14,13 +14,53 @@
   <body>
     <div class="container">
       {% block content %}
+      
+      <!-- Medicare Form -->
+      <form method="POST" action="/process_medicare">
+        <div class="mb-3">
+          <label for="inputData" class="form-label">Enter Data for Medicare</label>
+          <input type="text" class="form-control" id="inputData" name="inputData" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      {% if medicare_result %}
+      <div class="mt-3">
+        <h3>Medicare Result:</h3>
+        <p>{{ medicare_result }}</p>
+      </div>
+      {% endif %}
+
+      <!-- Revenue Form -->
+      <form method="POST" action="/process_revenue">
+        <div class="mb-3">
+          <label for="ticker" class="form-label">Enter Ticker for Revenue Data</label>
+          <input type="text" class="form-control" id="ticker" name="ticker" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Get Revenue</button>
+      </form>
+      {% if revenue_result %}
+      <div class="mt-3">
+        <h3>Revenue Result:</h3>
+        <p>{{ revenue_result }}</p>
+      </div>
+      {% endif %}
+
+      <!-- Exposure Form -->
+      <form method="POST" action="/process_exposure">
+        <div class="mb-3">
+          <label for="exposureValue" class="form-label">Enter Value for Exposure Calculation</label>
+          <input type="number" class="form-control" id="exposureValue" name="exposureValue" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Calculate</button>
+      </form>
+      {% if exposure_result %}
+      <div class="mt-3">
+        <h3>Exposure Result:</h3>
+        <p>{{ exposure_result }}</p>
+      </div>
+      {% endif %}
+      
       {% endblock %}
     </div>
-    <!-- ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
-
 </html>
