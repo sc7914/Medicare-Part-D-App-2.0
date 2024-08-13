@@ -1,0 +1,12 @@
+Flask-ngrok
+Gunicorn
+Requests
+Plotly
+Yfinance
+Pandas
+IPython
+Pytest
+Python-dotenv
+Pyngrok
+Flask_sqlalchemy
+Flask
