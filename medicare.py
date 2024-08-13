@@ -8,6 +8,9 @@ Original file is located at
 """
 
 import requests
+from pandas import DataFrame
+import plotly.graph_objects as go
+import pandas as pd
 
 size = 5000 # max supported by the API (see docs)
 offset = 0 # start with first data
@@ -25,7 +28,6 @@ while True:
     all_records.extend(data)
     offset += size
 
-from pandas import DataFrame
 
 all_df = DataFrame(all_records)
 all_df.index.name = "Row Number"
@@ -204,22 +206,6 @@ if company_key in company_data:
         print("--------------")
 else:
     print("Invalid company key.")
-
-import plotly.graph_objects as go
-import pandas as pd
-
-# Dictionary of company dataframes
-company_data = {
-    "ABBV": ABBV_data,
-    "PFE": PFE_data,
-    # ... other companies
-}
-
-# Display valid input options
-print("Valid company keys:")
-for key in company_data.keys():
-    print(key)
-print("-----------------------")
 
 # Get input from the user
 company_key = input("Enter the company key (e.g., ABBV, PFE): ")
