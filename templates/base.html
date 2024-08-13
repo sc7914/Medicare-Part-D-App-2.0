@@ -180,8 +180,9 @@
     
     <script>
         from flask import Flask, render_template, request
-        import medicare
-        import revenue
+        import medicare.py as medicare
+        import revenue.py as revenue
+        import exposure.py as exposure
 
         app = Flask(__name__)
 
@@ -189,17 +190,14 @@
         def index():
             return render_template('base.html')
 
-        @app.route('/process', methods=['POST'])
-        def process():
-            input_data = request.form['inputData']
-            result = medicare.process_input(input_data)
-            return render_template('base.html', result=result)
+        if __name__ == '__main__':
+            app.run(debug=True)
 
-        @app.route('/process_medicare', methods=['POST'])
-        def process_medicare():
-            input_data = request.form['inputData']
-            medicare_result = medicare.process_input(input_data)
-            return render_template('base.html', medicare_result=medicare_result)
+            @app.route('/process_medicare', methods=['POST'])
+            def process_medicare():
+                input_data = request.form['inputData']
+                medicare_result = medicare.process_input(input_data)
+                return render_template('base.html', medicare_result=medicare_result)
 
         @app.route('/process_revenue', methods=['POST'])
         def process_revenue():
