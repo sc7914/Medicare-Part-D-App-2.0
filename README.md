@@ -29,17 +29,20 @@ pip install -r requirements.txt
 ## Usage
 
 Medicare Part D spending:
+Input company ticker of interest to call up Medicare Part D spending
 
 ```sh
 python -m data.medicare
 ```
-Medicare Part D spending:
+Company revenue:
+Input company ticker, year(s), and year to retrieve total revenue from Yahoo Finance
 
 ```sh
 python -m data.revenue
 ```
 
-Medicare Part D spending:
+Calculator:
+Input Medicare Part D spend and annual company revenue based on information retrieved above to calculate %exposure. 
 
 ```sh
 python -m data.exposure
