@@ -1,5 +1,3 @@
-Flask-ngrok
-Gunicorn
 Requests
 Plotly
 Yfinance
@@ -7,6 +5,7 @@ Pandas
 IPython
 Pytest
 Python-dotenv
+Gunicorn
 Pyngrok
 Flask_sqlalchemy
 Flask
