@@ -3,6 +3,7 @@
 ## Setup
 
 Create virtual environment:
+*package includes .venv already*
 
 ```sh
 conda create -n env python=3.12
@@ -48,20 +49,11 @@ Run the web app (then view in the browser at http://localhost:5000/):
 
 ```sh
 # Mac OS:
-FLASK_APP=web_app/app.py flask run
+FLASK_APP=app/app.py flask run
 
 # Windows OS:
 # ... if `export` doesn't work for you, try `set` instead
 # ... or set FLASK_APP variable via ".env" file
 export FLASK_APP=web_app/app.py
 flask run
-```
-
-
-## Testing
-
-Run tests:
-
-```sh
-pytest
 ```
