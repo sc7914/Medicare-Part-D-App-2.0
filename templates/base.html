@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Skeleton application demoing Flask integration.">
 
-    <title>Hello World<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Skeleton application demoing Flask integration.">
-
     <title>Hello World!</title>
 
     <!-- Bootstrap core CSS -->
@@ -34,21 +27,7 @@
         <p>{{ medicare_result }}</p>
       </div>
       {% endif %}
-      
-      <form method="POST" action="/process_exposure">
-        <div class="mb-3">
-          <label for="exposureValue" class="form-label">Enter Value for Exposure Calculation</label>
-          <input type="number" class="form-control" id="exposureValue" name="exposureValue" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Calculate</button>
-      </form>
-      {% if exposure_result %}
-      <div class="mt-3">
-        <h3>Exposure Result:</h3>
-        <p>{{ exposure_result }}</p>
-      </div>
-      {% endif %}
-
+ 
       <form method="POST" action="/process_revenue">
         <div class="mb-3">
           <label for="ticker" class="form-label">Enter Ticker for Revenue Data</label>
@@ -130,7 +109,19 @@
         <p>{{ revenue_result }}</p>
       </div>
       {% endif %}
-      
+      <form method="POST" action="/process_exposure">
+        <div class="mb-3">
+          <label for="exposureValue" class="form-label">Enter Value for Exposure Calculation</label>
+          <input type="number" class="form-control" id="exposureValue" name="exposureValue" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Calculate</button>
+      </form>
+      {% if exposure_result %}
+      <div class="mt-3">
+        <h3>Exposure Result:</h3>
+        <p>{{ exposure_result }}</p>
+      </div>
+      {% endif %}
       <form method="POST" action="/process_exposure">
         <div class="mb-3">
           <label for="exposureValue" class="form-label">Enter Value for Exposure Calculation</label>
